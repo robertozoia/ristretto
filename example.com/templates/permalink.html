@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | {{ blog_title }} {% endblock %}
+
+{% block header %}
+	<h1><a href="{{ blog_url }}">{{ blog_title }}</a></h1>
+	<div class="blog-description">{{ blog_description }}</div>
+
+{% endblock %}
+
+
+{% block body %}
+
+<section id="post">
+	<article class="article">
+		<header>
+			{% if post.link %}
+				<h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+			{% else %}
+				<h2>{{ post.title }}</h2>
+			{% endif %}
+
+		</header>
+		<time datetime="{{ "%04d-%02d-%02d-T00:%02d:%02d-05:00"|format(post.date.year, post.date.month, post.date.day, post.date.hour, post.date.minute) }}" pubdate="pubdate">
+			{{ "%04d-%02d-%02d"|format(post.date.year, post.date.month, post.date.day) }}
+			 <a class="permalink" title="Permalink" href="{{ post.permalink }}">∞</a>
+		</time>
+		{{ post.content }}
+		
+			{% if post.tags %} Tags: {{ post.tags|join(', ') }}{% endif %}
+	</article>
+	
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

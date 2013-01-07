@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | {{ blog_title }} {% endblock %}
+
+{% block header %}
+	<h1><a href="{{ blog_url }}">{{ blog_title }}</a></h1>
+	<div class="blog-description">{{ blog_description }}</div>
+
+{% endblock %}
+
+
+{% block body %}
+
+<section id="post">
+	<article class="article">
+		<header>
+			{% if post.link %}
+				<h2><a href="{{ post.link }}">{{ post.title }}</a> <a class="permalink" title="Permalink" href="{{ post.permalink }}">∞</a>
+</h2>
+			{% else %}
+				<h2>{{ post.title }} <a class="permalink" title="Permalink" href="{{ post.permalink }}">∞</a>
+</h2>
+			{% endif %}
+
+		</header>
+		
+		{{ post.content }}
+		
+		{% if post.tags %} Tags: {% for tag in post.tags %}{{ tag }}{% endfor %} {% endif %}
+	</article>
+	
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

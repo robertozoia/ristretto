@@ -1,0 +1,24 @@
+Options -MultiViews
+Options -Indexes
+AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript text/xml text/rss text/rss+xml
+AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/xml
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([^\.]*)$ - [T=text/html]
+
+# Convert slugs ending with a slash to non-slash
+# Check first if directory actually exists 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ $1 [R=301]
+
+# convert slugs to .html files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [QSA,L]
+
+
+
+ErrorDocument 404 /blog/404.html
+ErrorDocument 500 /blog/500.html
+

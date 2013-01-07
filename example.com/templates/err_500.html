@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ blog_title }} {% endblock %}
+
+{% block header %}
+	<h1><a href="{{ blog_url }}">{{ blog_title }}</a></h1>
+	<div class="blog-description">{{ blog_description }}</div>
+
+{% endblock %}
+
+{% block body %}
+
+		<h2>Internal Server Error</h2>
+
+		<p>Oops, something broke!</p>
+		
+{% endblock %}
+{% block footer %}
+
+
+{% endblock %}
+	

@@ -1,0 +1,118 @@
+/* style.css */
+
+
+/*.rss_feed a {
+	padding-top: 8px;
+	padding-left: 30px;
+	padding-bottom: 8px;
+	background: url('/static/img/feed-icon-14x14.png') 8px 50% no-repeat;
+}*/
+
+#header a, #header a:link, #header a:hover {
+	color: #aaa;
+
+}
+
+#header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#header h1 {
+    font-size: 32px;
+}
+
+.blog-description {
+	margin-top: -15px;
+	color: #999;
+    font-size: 14px;
+}
+
+#sidebar {
+    font-size: 14px;
+    padding-top: 10px;
+}
+#content {
+    padding-left: 20px;
+}
+
+body {
+	font-size: 16px;
+	color: #535353;
+}
+
+header {
+	margin-bottom: 15px;
+}
+
+header h2 {
+	font-size: 24px !important;
+	line-height: 1.1 !important;
+	color: #222 !important;
+}
+
+
+article {
+	margin-bottom: 80px;
+	line-height: 1.5;
+	font-size: 16px;
+	color: #444;
+
+}
+
+article p {
+	line-height: 1.5;
+	font-size: 16px;
+	color: #444;
+}
+
+.small-caps {
+	font-variant: small-caps;
+}
+
+article time {
+    font-size: 14px;
+	padding-bottom: 15px;
+    margin-top: -10px;
+	display: block;
+}
+
+article img {
+    margin: 15px 5px;
+
+}
+
+article h2 {
+	font-size: 22px;
+	padding-top: 0.9em;
+}
+
+article h3 {
+	font-size: 18px;
+	padding-top: 0.9em;
+}
+
+article h1, article h2, article h3, article {
+	line-height: 1.1
+}
+
+article blockquote {
+	line-height: 1.5;
+}
+
+article li {
+	margin-bottom: 0.9em;
+}
+
+article legend {
+	line-height: 1.1;
+	font-size: 18px;
+	padding-top: 0.6em;
+}
+
+footer {
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-size: 12px;
+    line-height: 1;
+}

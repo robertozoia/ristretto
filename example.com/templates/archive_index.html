@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ blog_title }} {% endblock %}
+
+{% block header %}
+	<h1><a href="{{ blog_url }}">{{ blog_title }}</a></h1>
+	<div class="blog-description">{{ blog_description }}</div>
+
+{% endblock %}
+
+{% block body %}
+
+		<h2>Monthly Archvie</h2>
+
+		<ul class="unstyled">
+			{% set year = None %}
+			{% for o in archive %}
+				{% if year != o.date.year %}
+					{% set year = o.date.year %}
+					<li>&nbsp;</li>
+				{% endif %}
+				<li>
+					<a href="{{ o.url }}" >{{ "%04d-%02d"|format(o.date.year, o.date.month) }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+
+	<div class="nav">
+		{% if next_page_url %}
+			<a href="{{ next_page_url}}">&#8592; Older posts</a>
+		{% endif %}
+
+		{% if prev_page_url %}
+			&bpsp;&bpsp;&bpsp;&bpsp;<a href="{{ prev_page_url}}">Newer posts &#8594;</a> 
+		{% endif %} 
+	</div>
+
+{% endblock %}
+{% block footer %}
+
+
+{% endblock %}
+	

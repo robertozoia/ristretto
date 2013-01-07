@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>{% block title %}{{ blog_title }}{% endblock %}</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ blog_url }}/rss.xml">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="/static/css/codehilite.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+    {% block head %}
+
+    {% endblock %}
+    <style>
+
+    
+
+    </style>
+    
+  </head>
+<body>	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span10 offset1" id="header">
+				<!-- header -->
+				{% block header %}
+				The header!
+				{% endblock %}
+			</div>
+		</div>
+
+
+		<div class="row-fluid">
+			<div class="span2 offset1" id="sidebar">
+				<ul class="unstyled">
+					<li><a href="/archive.html">Archives</a></li>
+					{% if pages %}
+						<li>&nbsp;</li>
+						{% for page in pages %}
+							<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+						{% endfor %}
+					{% endif %}
+					
+				</ul>
+				<ul class="unstyled">
+					<li>Follow me on <a href="https://twitter.com/MY-TWITTER-HANDLE">Twitter</a></li>
+					<li>Subscribe via <a href="{{ blog_url }}/rss.xml">RSS</a></li>
+				</ul>
+			</div>
+			<div class="span6" id="content">
+				{% block body %}
+				
+			 
+				{% endblock %}
+			</div>
+
+		</div>
+
+		<div class="row-fluid">
+			<footer class="span6 offset3" id="footer">
+				<p>Follow me on <a href="https://twitter.com/MY-TWITTER-HANDLE">Twitter</a>. Subscribe to {{ blog_title }} via <a href="{{ blog_url }}/rss.xml">RSS Feed</a>.</p>
+				{% block footer %}
+				{% endblock %}
+			</footer>
+		</div>
+	</div>
+
+
+	<script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+	{% include "ga.html" %}
+
+</body>
+</html>
