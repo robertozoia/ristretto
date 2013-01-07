@@ -1,4 +1,5 @@
 ristretto
 =========
 
-A blogging engine that renders static files written in markdown.
+A blogging engine for generating baked (static-file) blogs from markdown files.
+

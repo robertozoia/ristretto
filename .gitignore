@@ -36,3 +36,7 @@ nosetests.xml
 
 # Sublime Text 2 files
 *.sublime-*
+
+# Ignore MacOs .DS_Store files
+.DS_Store
+
