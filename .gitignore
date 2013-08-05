@@ -40,3 +40,5 @@ nosetests.xml
 # Ignore MacOs .DS_Store files
 .DS_Store
 
+*.bbprojectd
+*.log
