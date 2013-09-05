@@ -710,11 +710,21 @@ class Updater(object):
         post_items = []
 
         for post in posts:
+            
+            content = re.sub(r'src="/', 
+                'src="%s/' %  self.s.BLOG_URL,
+                self.md_to_html(post.content))
+            content = re.sub(r"src='/",
+                "src='%s/" % self.s.BLOG_URL,
+                content)
+            
+            content =  smartypants(content)
+            
             post_items.append(FullRSSItem(
                 title=post.title,
                 link=post.permalink,
-                description=smartypants(self.md_to_html(post.content)),
-                content=smartypants(self.md_to_html(post.content)),
+                description=content,
+                content=content,
                 guid=PyRSS2Gen.Guid(post.permalink),
                 pubDate=post.date
             ))
